@@ -1,4 +1,5 @@
 using Cinemachine;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,18 @@ public class CameraShake : MonoBehaviour
     private CinemachineBasicMultiChannelPerlin perlin;
     private float shakeTimeReamining;
 
+    bool isInit = false;
+
     private void Awake()
+    {
+        if (isInit == false) Init();
+    }
+
+    private void Init()
     {
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
         perlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        isInit = true;
     }
 
     private void Update()
@@ -29,6 +38,8 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeCamera(float duration, float amplitude, float frequency)
     {
+        if (isInit == false) Init();
+
         if (shakeTimeReamining > duration) return;
 
         shakeTimeReamining = duration;

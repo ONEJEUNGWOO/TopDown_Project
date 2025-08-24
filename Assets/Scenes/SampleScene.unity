@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4211200c657a10b459d7921a61d23654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStageIndex: 0
   currentWaveIndex: 0
 --- !u!4 &42126454
 Transform:
@@ -18928,7 +18929,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47391587, y: 0.00107, z: -10}
+  m_LocalPosition: {x: 0.44896194, y: 0.00102, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19012,9 +19013,22 @@ MonoBehaviour:
     y: -4.5
     width: 4
     height: 8
+  - serializedVersion: 2
+    x: 19
+    y: -4.5
+    width: 2
+    height: 8
+  - serializedVersion: 2
+    x: -5
+    y: -20
+    width: 10
+    height: 2
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
   timeBetweenSpawns: 0.2
   timeBetweenWave: 1
+  itemPrefabs:
+  - {fileID: 7316934083572804571, guid: b4d334e3f93c36743902de1d267e9259, type: 3}
+  - {fileID: 7024321343595900469, guid: 8e80f91da0e69bc47bb8fa82bd07d9ef, type: 3}
 --- !u!4 &636666576
 Transform:
   m_ObjectHideFlags: 0
@@ -19349,8 +19363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff08fcbc955fa944a9d59bd394aa4ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  speed: 3
+  statData: {fileID: 11400000, guid: 1ac2ccb29d7bb5744bc01263060c51ee, type: 2}
 --- !u!114 &826403793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21107,6 +21120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2089176707}
   - component: {fileID: 2089176706}
+  - component: {fileID: 2089176708}
   m_Layer: 0
   m_Name: ProjectileManager
   m_TagString: Untagged
@@ -21146,6 +21160,21 @@ Transform:
   - {fileID: 222342950}
   m_Father: {fileID: 42126454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2089176708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089176705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1053d352eb07fb541ade4f5cdb33f1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 4682821850980541620, guid: 16abb8533abc40a43945386667a66ccc, type: 3}
+  - {fileID: 8621943925108752819, guid: ce6dac27f536f9e4faf2a3c4b0882fd0, type: 3}
 --- !u!1 &2092829681
 GameObject:
   m_ObjectHideFlags: 0
